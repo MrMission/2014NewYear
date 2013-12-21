@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Happy Spring Festival</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="garden.js"></script>
+    <script type="text/javascript" src="functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* Hi,the first day of 2014 is approaching,</span><br />
+				<span class="space"/><span class="comments">* so I write some codes to celebrate it.</span><br />
+				<span class="space"/><span class="comments">**/</span><br />
+				Boy i = <span class="keyword">new</span> Boy(<span class="string">"Jackie"</span>);<br />
+				Life u = <span class="keyword">new</span> Life(<span class="string">"2014"</span>);<br />
+				<span class="placeholder"/><span class="comments">// The New Year's bell is about to ring, and 2014 will soon begin.</span><br />
+				<span class="keyword">boolean</span> newyear = <span class="keyword">true</span>;<br />
+				<span class="placeholder"/><span class="comments">// Good luck to you everyday in the upcoming year!</span><br />
+				<span class="keyword">while</span> (newyear) {<br />
+				<span class="placeholder"/>i.wish(u);<br />
+				<span class="placeholder"/><span class="comments">// I think friendship is something one person cannot live without.</span><br />
+				<span class="placeholder"/><span class="comments">// So I give you my best wishes</span><br />
+				<span class="placeholder"/><span class="comments">// and would like to wish you all happiness, peace and health in the New Year!</span><br />
+				<span class="placeholder"/>i.say(<span class="string">"Happy new year and best wishes to you!"</span>);<br />
+				}<br />
+				u.smile();<br />
+				u.live(<span class="string">"happily every day in 2014!"</span>);<br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						<font size="30px" weight="900">New Year is coming!</font>
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Happy Spring Festival !!<br/>
+						<div class="signature">- Jackie</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			Inspired by <a href="http://hackerzhou.me">hackerzhou's LOVE</a> project.&nbsp;&nbsp;&nbsp;&nbsp;
+			Copyright © 2013 <a href='http://jok3r.ueuo.com'>Jackie</a> 2013-2014
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2014,01,30);
+		together.setHours(24);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
