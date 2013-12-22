@@ -1,7 +1,17 @@
+html {
+      height: 100%;
+}
 body {
 	margin: 0;
 	padding: 0;
-	background: #FFFFEE;
+	background: #090b44; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, #090b44 0%, #00001c 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#090b44), color-stop(100%,#00001c)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover, #090b44 0%,#00001c 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover, #090b44 0%,#00001c 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover, #090b44 0%,#00001c 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center, #090b44 0%,#00001c 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#090b44', endColorstr='#00001c',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 	font-size: 12px;
 	overflow: hidden;
 }
@@ -38,6 +48,7 @@ body {
 
 #messages{
 	display: none;
+	color:red;
 }
 
 #elapseClock .digit{
@@ -52,6 +63,9 @@ body {
 	margin-right: 120px;
 	text-align: right;
 	display: none;
+	color:#FFD700;
+	font-weight:900;
+	text-shadow:0 2px 2px rgba(100,100,0,.08);
 }
 
 #loveu .signature{
@@ -68,7 +82,7 @@ body {
 	float: left;
 	width: 440px;
 	height: 400px;
-	color: #333;
+	color: #999;
 	font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", "sans-serif";
 	font-size: 18px;
 }
@@ -112,4 +126,7 @@ body {
 
 #copyright a{
 	color:#666;
+}
+canvas.flare {
+	opacity: 0.0;
 }

@@ -7,7 +7,7 @@ $(function () {
     // setup garden
 	$loveHeart = $("#loveHeart");
 	var offsetX = $loveHeart.width() / 2;
-	var offsetY = $loveHeart.height() / 2 - 55;
+	var offsetY = $loveHeart.height() / 2 - 70;
     $garden = $("#garden");
     gardenCanvas = $garden[0];
 	gardenCanvas.width = $("#loveHeart").width();
@@ -18,7 +18,7 @@ $(function () {
 	
 	$("#content").css("width", $loveHeart.width() + $("#code").width());
 	$("#content").css("height", Math.max($loveHeart.height(), $("#code").height()));
-	$("#content").css("margin-top", Math.max(($window.height() - $("#content").height()) / 2, 10));
+	$("#content").css("margin-top", Math.max(($window.height() - $("#content").height()) / 2-50, 10));
 	$("#content").css("margin-left", Math.max(($window.width() - $("#content").width()) / 2, 10));
 
     // renderLoop
@@ -61,11 +61,11 @@ function startHeartAnimation() {
 			heart.push(bloom);
 			garden.createRandomBloom(bloom[0], bloom[1]);
 		}
-		if (angle >= 30) {
+		if (angle >= 0) {
 			clearInterval(animationTimer);
 			showMessages();
 		} else {
-			angle += 0.2;
+			angle += 0;
 		}
 	}, interval);
 }
@@ -99,16 +99,16 @@ function timeElapse(date){
 	seconds = seconds % (3600 * 24);
 	var hours = Math.floor(seconds / 3600);
 	if (hours < 10) {
-		hours = "0" + hours;
+		hours = hours;
 	}
 	seconds = seconds % 3600;
 	var minutes = Math.floor(seconds / 60);
 	if (minutes < 10) {
-		minutes = "0" + minutes;
+		minutes = minutes;
 	}
 	seconds = seconds % 60;
 	if (seconds < 10) {
-		seconds = "0" + seconds;
+		seconds = seconds;
 	}
 	var result = "<span class=\"digit\">" + days + "</span> days <span class=\"digit\">" + hours + "</span> hours <span class=\"digit\">" + minutes + "</span> minutes <span class=\"digit\">" + seconds + "</span> seconds"; 
 	$("#elapseClock").html(result);

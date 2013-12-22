@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<title>Happy Spring Festival</title>
+	<title>Happy New Year!</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="author" content="Jackie Kuo">
 	<style type="text/css">
 		@font-face {
 			font-family: digit;
@@ -13,9 +14,31 @@
 	<script type="text/javascript" src="jquery.js"></script>
 	<script type="text/javascript" src="garden.js"></script>
     <script type="text/javascript" src="functions.js"></script>
+    <script type="text/javascript" src="jquery.let_it_snow.js"></script>
+    <script>
+	  $(document).ready( function() {
+	     $("canvas.flare").let_it_snow({
+  	      windPower: 0,
+  	      speed: 0,
+  	      color: "#392F52",
+  	      size:120,
+  	      opacity: 0.00000001,
+  	      count: 40,
+  	      interaction: false
+  	    });
+  	    $("canvas.snow").let_it_snow({
+    	      windPower: 3,
+    	      speed: 1,
+    	      count: 250,
+    	      size: 0
+    	    });
+	  });
+	</script>
 </head>
 
 <body>
+  	<canvas width="100%" height="100%" class="flare" style="display: block;position: fixed;height:100%;width:100%;"></canvas>
+  	<canvas width="100%" height="100%" class="snow" style="display: block;position: fixed;height:100%;width:100%;"></canvas>
 	<div id="mainDiv">
 		<div id="content">
 			<div id="code">
@@ -42,18 +65,19 @@
 				<canvas id="garden"></canvas>
 				<div id="words">
 					<div id="messages">
-						<font size="30px" weight="900">New Year is coming!</font>
+						<font color="#FFD700" face="Mistral,Helvetica" size="30px" weight="900">New Year is coming!</font>
+
 						<div id="elapseClock"></div>
 					</div>
 					<div id="loveu">
-						Happy Spring Festival !!<br/>
+						<font style="font-style:italic;">Happy New Year !!</font><br/>
 						<div class="signature">- Jackie</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div id="copyright">
-			Inspired by <a href="http://hackerzhou.me">hackerzhou's LOVE</a> project.&nbsp;&nbsp;&nbsp;&nbsp;
+			Inspired by <a href="http://hackerzhou.me">hackerzhou's LOVE</a> project& <a href="https://www.google.com/#newwindow=1&q=let+it+snow">Google'"Let it snow!"</a>.&nbsp;&nbsp;&nbsp;&nbsp;
 			Copyright © 2013 <a href='http://jok3r.ueuo.com'>Jackie</a> 2013-2014
 		</div>
 	</div>
@@ -61,8 +85,8 @@
 		var offsetX = $("#loveHeart").width() / 2;
 		var offsetY = $("#loveHeart").height() / 2 - 55;
 		var together = new Date();
-		together.setFullYear(2014,01,30);
-		together.setHours(24);
+		together.setFullYear(2014,0,0);
+		together.setHours(00);
 		together.setMinutes(0);
 		together.setSeconds(0);
 		together.setMilliseconds(0);
