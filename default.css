@@ -37,12 +37,13 @@ body {
 	font-size: 18px;
 	margin-top: 10px;
 	margin-bottom: 10px;
+	text-shadow:0 2px 2px rgba(255,164,250,0.8);
 }
 
 #words {
 	font-family: "sans-serif";
 	width: 500px;
-	font-size: 24px;
+	font-size: 30px;
 	color:#666;
 }
 
@@ -58,14 +59,14 @@ body {
 
 #loveu{
 	padding: 5px;
-	font-size: 22px;
+	font-size: 25px;
 	margin-top: 80px;
 	margin-right: 120px;
 	text-align: right;
 	display: none;
 	color:#FFD700;
 	font-weight:900;
-	text-shadow:0 2px 2px rgba(100,100,0,.08);
+	text-shadow:0 2px 2px rgba(255,250,196,1.0);
 }
 
 #loveu .signature{
@@ -109,10 +110,19 @@ body {
 }
 
 #copyright{
-	margin-top: 10px;
+	margin-top: 12px;
 	text-align: center;
 	width:100%;
 	color:#666;
+}
+
+#copyright a{
+	color:#666;
+}
+
+#copyright a:hover{
+	color:#fff;
+	cursor: pointer;
 }
 
 #errorMsg{
@@ -122,11 +132,9 @@ body {
 	position: absolute;
 	top: 100px;
 	left:0px;
+	color: #999;
 }
 
-#copyright a{
-	color:#666;
-}
 canvas.flare {
 	opacity: 0.0;
 }
